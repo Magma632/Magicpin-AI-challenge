@@ -61,8 +61,8 @@ async def healthz():
 @app.get("/v1/metadata")
 async def metadata():
     return {
-        "team_name": "Team Claude",
-        "team_members": ["Claude"],
+        "team_name": "Aniket",
+        "team_members": ["Aniket"],
         "model": llm_client.active_provider(),
         "approach": (
             "4-context resolver (context_store.py) feeding a single rubric-aware "
@@ -72,7 +72,7 @@ async def metadata():
             "auto-reply / intent-handoff / hostile-offtopic / graceful-exit, with an "
             "LLM call only for the genuinely open-ended reply case."
         ),
-        "contact_email": "team@example.com",
+        "contact_email": "",
         "version": "1.0.0",
         "submitted_at": datetime.now(timezone.utc).isoformat(),
     }

@@ -194,3 +194,13 @@ async def teardown():
     CONVERSATIONS.clear()
     NUDGE_COUNTS.clear()
     return {"status": "wiped"}
+
+
+@app.get("/", include_in_schema=False)
+async def homepage():
+    """Serve the browser demo; the judge uses the unchanged /v1 API."""
+    from pathlib import Path
+    from fastapi.responses import HTMLResponse
+
+    page = Path(__file__).with_name("index.html").read_text(encoding="utf-8")
+    return HTMLResponse(page)
